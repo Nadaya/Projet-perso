@@ -3,6 +3,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include<wiringPi.h> 
+#include "pince.h"
 
 
 // pour compiler : gcc -o blinker blinker.c -l wiringPi  works only for x86  NOT the rasp
