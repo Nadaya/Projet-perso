@@ -1,9 +1,12 @@
 
+void send_mavlink_message(int fd, mavlink_message_t *msg);
+void receive_mavlink_message(int fd);
+
 // arm the motors
 void arm();
 
 // save the departure coordinates to get back if needed
-void set_hom();
+void set_hom(mavlink_message_t *msg);
 
 // establish the connection between Raspberry Pi an the flight controller
 void connection();
@@ -26,13 +29,13 @@ void mission_mode();
 /* once the connection established and the calibration done, it allows the drone to take off at a z altitude 
 angle= 0 -> drone heading to North
 x representes latitude in degres and y the longitude */
-void arm_takeoff(int angle, int x, int y, int z);
+void arm_takeoff(int32_t angle, int32_t x, int32_t y, int32_t z);
 
 // add a WAYPOINT to the mission 
-void new_command(int angle, int x, int y, int z);
+void new_command(int32_t angle, int32_t x, int32_t y, int32_t z);
 
 // return the actual coordinates of the drone (longitude, latutude and altitude regarding the ground not the sea)
-void coodinate();
+void coodinate(mavlink_message_t *msg);
 
 // return the different inclinations of the drone 
 // ATTENTION changer valeur de retour de la fonction 

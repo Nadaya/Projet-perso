@@ -1,5 +1,6 @@
 {
     "files.associations": {
-        "mavlink.h": "c"
+        "mavlink.h": "c",
+        "*.tcc": "c"
     }
 }
